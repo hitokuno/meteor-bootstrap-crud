@@ -1,7 +1,7 @@
-# meteor-bootstrap-crud
+# Meteor Bootstrap CRUD
 =====================
 
-A templete for sortable CRUD Meteor application.
+A templete for sortable CRUD [Meteor](https://www.meteor.com/) application with [Bootstrap](http://getbootstrap.com/).  
 
 Install
 --------
