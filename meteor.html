@@ -1,0 +1,122 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Meteor-Bootstrap</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="//docs.meteor.com/favicon.png" type="image/png" />
+
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Original CSS -->
+  <link rel="stylesheet" type="text/css" href="./meteor.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Meteor-Bootstrap template</h1>
+        <p class="lead">A templete for sortable CRUD application.</p>
+      </div>
+      
+      <div class="row">
+        {{> items}}
+      </div>
+      <hr>
+      <div class="row">
+        {{> editItem}}
+      </div>
+    </div><!-- /.container -->
+</body>
+
+<template name="editItem">
+  <input class="btn btn-primary" type="button" id="new" value="New">
+  <div id="addItem">
+    <hr>
+    <form>
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="id" placeholder="ID">
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="desciprtion">Desciprtion</label>
+        <input type="text" class="form-control" id="desciprtion" placeholder="Desciprtion">
+      </div>
+      <div class="form-group">
+        <label for="latitude">Latitude</label>
+        <input type="text" class="form-control" id="latitude" placeholder="Latitude">
+      </div>
+      <div class="form-group">
+        <label for="longitude">Longitude</label>
+        <input type="text" class="form-control" id="longitude" placeholder="Longitude">
+      </div>
+      <input type="hidden" id="objectId">
+      <button type="button" class="btn btn-default" id="insert">Insert</button>
+      <button type="button" class="btn btn-default" id="update">Update</button>
+      <button type="button" class="btn btn-default" id="cancel">Cancel</button>
+    </form>
+  </div>
+</template>
+
+<template name="items">
+    <div class="table-responsive">
+      <table id="example" class="table table-hover table-bordered  table-condensed" cellspacing="0" width="100%">
+        <thead>
+          <td>#</td>
+          <td class="sorting sorting_asc">_id</td>
+          <td class="sorting">ID</td>
+          <td class="sorting">Name</td>
+          <td class="sorting">Desciprtion</td>
+          <td class="sorting">Latitude</td>
+          <td class="sorting">Longitude</td>
+        </thead>
+        <tbody>
+          {{#each items}}
+          <tr>
+            <td>
+              <button type="button" class="edit">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </button>
+              <button type="button" class="delete">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </td>
+            <td>{{_id}}</td>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{desciprtion}}</td>
+            <td>{{latitude}}</td>
+            <td>{{longitude}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+</template>

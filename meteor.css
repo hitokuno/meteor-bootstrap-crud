@@ -1,0 +1,44 @@
+/* CSS declarations go here */
+
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+table.table thead {
+  text-decoration: bold;
+}
+
+table.table thead .sorting {
+  padding-right: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+table.table thead .sorting::after {
+  position: absolute;
+  bottom: 0px;
+  right: 8px;
+  display: block;
+  font-family: "Glyphicons Halflings";
+  opacity: 0.2;
+  content: "";
+}
+
+table.table thead .sorting_asc::after {
+  opacity: 0.8;
+  content: "";
+}
+
+table.table thead .sorting_desc::after {
+  opacity: 0.8;
+  content: "";
+}
